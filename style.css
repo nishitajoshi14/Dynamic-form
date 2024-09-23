@@ -1,0 +1,396 @@
+/* Styles for the cross sign delete functionality */
+.delete-field {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #ff0000;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+.delete-field:hover {
+    color: #cc0000;
+}
+
+/* Other existing styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; /* Align items to the top of the container */
+}
+
+.form-container, .right-form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-height: 100vh; /* Prevents the forms from growing beyond the viewport height */
+    overflow: auto; /* Adds scrollbars if content overflows */
+}
+
+
+.small-title {
+    font-size: 20px; /* Adjust size as needed */
+    font-weight: normal; /* Optional: Adjust weight */
+    margin-bottom: 10px; /* Optional: Adjust spacing */
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4e79ec;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0c2a7e;
+}
+
+button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#additionalFields {
+    margin-top: 15px;
+}
+
+/* Flexbox for placing the label, input, dropdown, and checkbox in the same box */
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.input-box .row {
+    display: flex;
+    gap: 10px;
+}
+
+.input-box .row > * {
+    flex: 1;
+}
+
+.field-container {
+    flex: 1;
+}
+
+/* Hide labels for Last Name and Type */
+.input-box .row .field-container label {
+    display: none;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 10px;
+}
+
+.required-checkbox,
+.record-checkbox,
+.action-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.required-checkbox label,
+.record-checkbox label,
+.action-checkbox label {
+    margin-left: 5px;
+}
+
+.delete-field {
+    margin-left: 10px; /* Add space between checkboxes and delete sign */
+}
+
+
+/* New Form Styles */
+.new-form-container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-height: 100vh; /* Prevents the forms from growing beyond the viewport height */
+    overflow: auto; /* Adds scrollbars if content overflows */
+}
+
+.new-form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* Ensure proper layout of the new options in a row */
+.options-container {
+    display: flex; /* Use flexbox for horizontal alignment */
+    gap: 15px; /* Space between checkboxes */
+    margin-top: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.option input {
+    margin-right: 5px; /* Space between checkbox and label */
+}
+
+
+
+#form-container {
+    margin: 20px;
+}
+
+.field-group {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkbox-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative; /* Position relative for absolute positioning of the cross sign */
+}
+
+.cross-sign {
+    display: none; /* Hide the cross sign by default */
+    cursor: pointer;
+    margin-left: 10px;
+    color: rgb(228, 25, 25);
+    font-weight: bold;
+    font-size: 50px;
+    position: absolute;
+    right: 0;
+}
+
+.checkbox-container:hover .cross-sign {
+    display: inline; /* Show the cross sign when hovering over the container */
+}
+
+.checkbox-row .checkbox-item {
+    margin-right: 10px; /* Spacing between checkboxes */
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input {
+    margin-right: 5px; /* Space between checkbox and label */
+}
+
+.textarea-container {
+    margin-top: 10px; /* Adjust as needed */
+    display: none;
+}
+
+.textarea-input {
+    width: 320px; /* Adjust the width */
+    height: 70px; /* Adjust the height */
+    resize: none; /* Optional: prevents resizing by the user */
+    font-size: larger;
+}
+ 
+
+.textarea-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block; 
+    font-size: small;
+}
+
+/* Styling for the duplicated textbox container */
+.textbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Style for the row container that holds pairs of textboxes */
+.row-container {
+    display: flex; /* Align textboxes in a row */
+    gap: 10px; /* Space between textboxes */
+    margin-bottom: 10px; /* Space below each row */
+}
+
+/* Styling for the duplicated textbox container */
+.duplicate-textbox {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px; /* Adjust the width as needed */
+}
+
+/* Styling for the close button */
+.close-textbox {
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    line-height: 30px;
+}
+.options-dropdown, .date-wise-dropdown {
+    margin-left: 10px;
+    width: 160px;
+}
+.hidden {
+    display: none;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.flex-row select {
+    width: 48%; /* Make each dropdown take up half the width of the row */
+}
+.dropdown-row {
+    display: flex;
+    gap: 10px; /* Space between the two dropdowns */
+    margin-bottom: 10px;
+}
+
+.dropdown-row select {
+    width: 200px; /* Set medium width for the dropdowns */
+    padding: 5px; /* Add padding for a better visual */
+}
+
+.dynamic-fields {
+    display: flex;
+    gap: 10px; /* Space between label and type dropdown */
+    margin-top: 10px; /* Space between dynamic fields and the dropdowns */
+    flex-direction: row;
+}
+
+.dynamic-label-input, .dynamic-fields select {
+    width: 200px; /* Set medium width for the dynamic fields as well */
+    padding: 5px;
+    flex-direction: row;
+}
+.dropdown-row {
+    display: flex;
+    margin-bottom: 10px; /* Adjust spacing below the dropdowns as needed */
+}
+
+.dropdown-row select {
+    margin-right: 10px; /* Adjust spacing between the dropdowns as needed */
+}
+
+.dynamic-field-row {
+    display: flex;
+    margin-top: 10px; /* Adjust spacing between rows as needed */
+}
+
+.dynamic-field-row .dynamic-label-input,
+.dynamic-field-row .type-dropdown {
+    margin-right: 10px; /* Adjust spacing between fields as needed */
+}
+
+
+.draggable {
+    cursor: move;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    margin: 5px;
+    background-color: #f9f9f9;
+}
+.drag-over {
+    border: 2px dashed #000;
+}
+.create-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100px;
+}
+.create-button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+
+
+

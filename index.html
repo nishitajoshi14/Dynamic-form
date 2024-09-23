@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Form -->
+        <div class="form-container">
+            <form id="userForm">
+            
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <!-- Title Field -->
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <!-- Description Field -->
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+
+                <!-- Dropdown List -->
+                <div class="form-group">
+                    <label for="clientInfo">Display First:</label>
+                    <select id="clientInfo" name="clientInfo" required>
+                        <option value="" disabled selected>Information</option>
+                        <option value="Client">Client Basic Information</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic Content -->
+                <div id="dynamicFields"></div>
+                
+                
+            </form>
+            <div id="output"></div>
+        </div>
+
+        <!-- Right Form (Existing Form) -->
+        <div class="right-form-container">
+            <div class="small-title">Basic User Information Fields</div>
+            <form id="basicUserForm">
+                <div class="button-group">
+                    <button type="button" id="addBasicUserField">+ Add Basic User Field</button>
+                    <button type="button" id="addFields">+ Add Fields</button>
+                </div>
+                <!-- Additional fields will be added here -->
+                <div id="additionalFields" class="additionalFields"></div>
+            </form>
+        </div>
+
+        <!-- New Form (Other Fields) -->
+        <div class="right-form-container">
+            <div class="small-title">Other Fields</div>
+            <form id="otherForm">
+                <!-- Button to add field -->
+                <div class="button-group">
+                    <button type="button" id="addFieldsOther">+ Add Fields</button>
+<button type="button" id="addConditionalField">+ Add Conditional Field</button>
+
+                </div>
+
+                <!-- Additional fields will be added here -->
+                <div id="additionalFieldsOther" class="additionalFields"></div>
+                                
+            </form>
+            
+        </div>
+    </div>
+    
+
+<!-- Create Button -->
+<button class="create-button" id="createButton">Create</button>
+
+    
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
